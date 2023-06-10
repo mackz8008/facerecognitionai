@@ -48,7 +48,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3002")
+    fetch("https://smartbrainai.onrender.com")
       .then((response) => response.json())
       .then(console.log);
   }
@@ -136,7 +136,7 @@ class App extends Component {
         // console.log(result.outputs[0].data.regions[0].region_info.bounding_box);
         console.log("result returned - ", result);
         if (result) {
-          fetch("http://localhost:3002/image", {
+          fetch("https://smartbrainai.onrender.com/image", {
             method: "put",
 
             headers: { "Content-Type": "application/json" },
@@ -169,7 +169,7 @@ class App extends Component {
     });
     // New code;
 
-    fetch("http://localhost:3002/imageurl", {
+    fetch("https://smartbrainai.onrender.com/imageurl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -183,7 +183,7 @@ class App extends Component {
         console.log("result returned - ", response);
         // console.log(result.outputs[0].data.regions[0].region_info.bounding_box);
         if (response) {
-          fetch("http://localhost:3002/image", {
+          fetch("https://smartbrainai.onrender.com/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
